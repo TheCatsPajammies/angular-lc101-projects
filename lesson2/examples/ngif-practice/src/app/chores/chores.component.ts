@@ -17,4 +17,27 @@ export class ChoresComponent implements OnInit {
    }
 
 }
-// "1", "2", "3", "4", "5", "6"
+/*
+<div>
+   <h3>Prep Work</h3>
+   <ul>
+      <li *ngFor = "let task of prepWork">{{task}}</li>
+   </ul>
+</div>
+
+<ng-template #noHW>
+   <p>This space intentionally left blank.</p>
+</ng-template>
+
+Assume we have defined a prepWork array to hold the homework tasks for our next class. We want the web page to always show the heading. Underneath that we want to add either the list of tasks or the paragraph text if the array is empty.
+
+Where should we place an *ngIf statement to make this happen?
+
+In the p tag
+
+
+For the same code sample, which of the following shows the correct syntax for the *ngIf statement?
+
+*ngIf = "prepWork.length === 0; else noHW"
+
+*/
