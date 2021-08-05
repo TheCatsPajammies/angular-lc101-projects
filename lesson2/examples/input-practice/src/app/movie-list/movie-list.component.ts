@@ -12,7 +12,21 @@ export class MovieListComponent implements OnInit {
 
    ngOnInit() {
    }
-   //  functions go here in between
+   //  functions go here in between ngInInit()
+   addMovie (newTitle: string) {
+      if (newTitle === "") {
+         alert("Fill out the dang form!"); // Bonus mission to prevent empty string.
+      } else if(!this.movies.includes(newTitle)){
+         this.movies.push(newTitle);
+      }
+   }
+
+}
+
+/*
+
+
+!!! Throws alert if duplicate!!!
    addMovie (newTitle: string) {
       if(this.movies.includes(newTitle)){
          alert("No duplicates!");
@@ -21,4 +35,5 @@ export class MovieListComponent implements OnInit {
       }
    }
 
-}
+
+*/

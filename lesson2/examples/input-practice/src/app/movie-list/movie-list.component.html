@@ -6,6 +6,7 @@
     <hr>
     <!-- See #newMovie and newMovie.value - (input.id.value essentially.) -->
     <input #newMovie (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
-    <button (click)='addMovie(newMovie.value)'>Add</button>
-    <p>{{newMovie.value}}</p>
+    <button *ngIf = "movies.includes(newTitle); else noDuplicates" (click)='addMovie(newMovie.value)'>Add</button>
+    <!-- TODO Bonus mission to use Use *ngIf to display an error message if the user does not enter a title or submits a title that is already on the list.
+         Add CSS to change the color of the error message. -->
  </div>
