@@ -14,11 +14,15 @@ export class MovieListComponent implements OnInit {
    }
    //  functions go here in between ngInInit()
    addMovie (newTitle: string) {
-      if (newTitle === "") {
-         alert("Fill out the dang form!"); // Bonus mission to prevent empty string.
-      } else if(!this.movies.includes(newTitle)){
+      let errorMsg = '';
+      if(newTitle === ''){
+         errorMsg = 'Please enter a movie title.';
+      } else if (this.movies.includes(newTitle)) {
+         errorMsg = `${newTitle} is already in your movie list.`;
+      } else {
          this.movies.push(newTitle);
       }
+      return errorMsg;
    }
 
 }
@@ -34,6 +38,20 @@ export class MovieListComponent implements OnInit {
          this.movies.push(newTitle);
       }
    }
+
+   !! solution from solution branch !!!
+      addMovie (newTitle: string) {
+      let errorMsg = '';
+      if(newTitle === ''){
+         errorMsg = 'Please enter a movie title.';
+      } else if (this.movies.includes(newTitle)) {
+         errorMsg = `${newTitle} is already in your movie list.`;
+      } else {
+         this.movies.push(newTitle);
+      }
+      return errorMsg;
+   }
+
 
 
 */

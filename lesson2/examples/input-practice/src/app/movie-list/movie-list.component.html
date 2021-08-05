@@ -5,8 +5,16 @@
     </ol>
     <hr>
     <!-- See #newMovie and newMovie.value - (input.id.value essentially.) -->
-    <input #newMovie (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
-    <button *ngIf = "movies.includes(newTitle); else noDuplicates" (click)='addMovie(newMovie.value)'>Add</button>
+    <input #newMovie (keyup.enter)="message = addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
+    <button (click)="message = addMovie(newMovie.value); newMovie.value = ''">Add</button>
+    <p class = "error" *ngIf = "message">{{message}}</p>
     <!-- TODO Bonus mission to use Use *ngIf to display an error message if the user does not enter a title or submits a title that is already on the list.
          Add CSS to change the color of the error message. -->
  </div>
+
+ <!-- The following lines solve the bonus tasks. Replace lines 7 & 8 with lines
+         12 - 14.
+    <input #newMovie (keyup.enter)="message = addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
+    <button (click)="message = addMovie(newMovie.value); newMovie.value = ''">Add</button>
+    <p class = "error" *ngIf = "message">{{message}}</p>
+    -->
